@@ -1,0 +1,24 @@
+
+server:
+  port: 8888
+
+spring:
+  application:
+    name: api-gateway-server
+
+zuul:
+  routes:
+    cart-service:
+      path: /cart/**
+      service-id: cart-service
+      strip-prefix: false
+      
+    prouct-service:
+      path: /products/**
+      service-id: product-service
+      strip-prefix: false
+      
+    coupon-service:
+      path: /coupons/**
+      service-id: coupon-service
+      strip-prefix: false
